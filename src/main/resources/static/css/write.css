@@ -1,0 +1,71 @@
+
+@charset "UTF-8";
+@import url("common.css");
+@import url("sideMenu.css");
+
+.page-board{
+	padding:70px 0 170px; 
+	font-family: 'Noto Sans', sans-serif;
+}
+
+/* ////////////////////////////////////////// */
+#write>div{
+	width: 820px;
+	
+}
+#write>div>div{
+	padding-bottom: 28px;
+}
+#write>div>div>p.page-tit{
+	height: 42px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #333;
+}
+#write>div>div>p.page-tit .sub{
+	font-size: 12px;
+}
+#write div div.page-view table.detail-tit{
+	width: 100%;
+	
+}
+#write div div.page-view table.detail-tit tr:first-child td{
+	border-top: 2px solid #5f0080;
+}
+#write div div.page-view table.detail-tit td{
+	border-bottom: 1px solid #dcdbde;
+	padding: 13px 0 13px 20px;
+}
+#write div div.page-view table.detail-tit td.tit{
+	background-color: #f7f5f8;
+	width: 120px;
+}
+#write div div.page-view div.content{
+	padding: 30px 20px;
+	border-bottom: 1px solid #5f0080;
+}
+
+#write div div.page-view div.btn {
+	padding: 20px 0;
+	border-bottom: 2px solid #5f0080;
+	text-align: right;
+}
+#write div div.page-view div.btn button{
+	width:150px;
+	height:42px;
+	border:none;
+	background-color: #795B8f;
+	color: #FFF;
+}
+
+#write div div.page-view div.btn button:hover {
+	background-color: #5f0080;
+	cursor: pointer;
+}
+
+#write-wrap table tr td input,
+#write-wrap .content textarea {
+	width: 100%;
+}
+

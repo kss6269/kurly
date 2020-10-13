@@ -1,0 +1,92 @@
+@charset "UTF-8";
+@import url("common.css");
+
+.msg{
+	color: green;
+}
+.page-tit{
+	color: #333;
+	padding-top: 64px;
+	font-size: 30px;
+	font-weight: 900;
+	text-align: center;
+}
+.sub{
+	padding: 23px 0 10px;
+	font-size: 12px;
+	color: #666;
+	text-align: right;
+}
+.ico{
+	color: #ee6a7b;
+	padding-right: 2px;
+}
+.field_head{
+	width: 340px;
+	margin: 0 auto
+}
+.login-form{
+	width: 340px;
+	margin: 0 auto;	
+	/* border-top: 1px solid #5f0080; */
+	padding: 10px 0 30px; 
+}
+
+
+.bad{
+	color: #ee6a7b;
+}
+
+.good{
+	color: #0f851a;
+}
+.bad:before {
+	content: '\2715';
+    display: inline-block;
+    padding-right: 3px;
+    font-size: 12px;
+    vertical-align: 0;
+}
+.good:before {
+    content: '\2713';
+    display: inline-block;
+    padding: 0 4px 0 2px;
+    font-size: 12px;
+    vertical-align: 0;
+}
+#login .login-form ul li{
+	margin-top:10px;
+}
+/* type=checkbox인 input태그를 제외한 나머지 input 태그만선택 */
+#login .login-form ul li input:not([type=checkbox]){
+	width: 100%;
+	height:  54px;
+	padding: 0 19px;
+	font-size: 14px;
+	outline: none;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+#login .login-form ul .check-box{
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 28px;
+	font-size: 13px;
+	
+}
+#login .login-form ul li input[type=checkbox]{
+	vertical-align: baseline;
+	margin-right: 5px;
+}
+#login .login-form ul li input[type=submit]{
+	background-color: #5f0080;
+	border: 1px solid #5f0080;
+	color: #fff;
+	font-size: 16px;
+}
+#login .login-form ul li input[type=button]{
+	background-color: #fff;
+	border: 1px solid #5f0080;
+	color: #5f0080;
+	font-size: 16px;
+}

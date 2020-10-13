@@ -1,0 +1,93 @@
+@charset "UTF-8";
+footer{
+	border-top: 1px solid #f0f0f0;
+}
+#footer-wrap{
+	display: flex;
+	padding: 30px 0;
+}
+#footer-wrap section{
+	width: 525px;
+}
+#cc p.cc-tit{
+	font-weight: 700;
+    font-size: 20px;
+    color: #333;
+}
+#cc div.cc-item{
+	padding-top:16px;
+	display: flex;
+}
+#cc div.cc-item dl{
+	font-size: 14px;
+	color: #333;
+	line-height: 20px;
+	letter-spacing: -.2px;
+	margin-left:16px;
+}
+#cc div.cc-item dl dd{
+	color: #999;
+}
+#cc div.cc-call{
+	padding-top:29px;
+}
+#cc div.cc-call p{
+	font-weight: 800;
+	color: #333;
+	font-size: 28px;
+	letter-spacing: -.5px;
+}
+#cc div.cc-cacao p,
+#cc div.cc-qna p{
+	width:140px;
+	height: 40px;
+	line-height: 40px;
+	font-weight: 700;
+	font-size: 14px;
+	border: 1px solid #e3e3e3;
+	border-radius:7px; 
+	text-align: center;
+	
+	
+}
+#cc div.cc-qna dd{
+	letter-spacing: -2px;
+}
+/* ////////////////////////////////////// */
+#company{
+	font-size: 12px;
+	color: #999;
+	line-height: 20px;
+	letter-spacing: -.2px;
+}
+#terms{
+	margin-bottom: 29px;
+}
+#terms ul.row-align{
+	justify-content: space-between;
+}
+#terms ul.row-align a{
+	font-size: 14px;
+	color: #333;
+}
+#terms ul.row-align a.pi{
+	font-weight: 700;
+}
+#company .info a{
+	color: #5f0080;
+	font-weight:700; 
+}
+#company .info address{
+	font-style: normal;
+	font-size: 12px;
+}
+#company .info .copy{
+	padding: 16px 0;
+}
+/* ///////////////////////////// */
+#company .sns ul li{
+	margin-right: 10px;
+}
+#company .sns ul li img{
+	width: 30px;
+}

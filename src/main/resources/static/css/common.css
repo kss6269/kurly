@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+@import url("reset.css");
+@import url("header.css");
+@import url("footer.css");
+
+/* 화면사이즈 css */
+.view-width{
+	width: 1050px;
+	margin: 0 auto; 
+}
+/* 가로정렬 css */
+.row-align{
+	display: flex;
+}
+/* 세로정렬 css */
+.column-align{
+	display: flex;
+	flex-direction: column;
+}
+.space-between,
+.page-board{
+	display: flex;
+	justify-content: space-between;
+}
+
+.btn-style{
+	width:150px;
+	height:42px;
+	border:none;
+	background-color: #795B8f;
+	color: #FFF;
+}
+
+.btn-style:hover {
+	background-color: #5f0080;
+	cursor: pointer;
+}
+
+
+
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="/js/jquery-3.5.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/notice.css">
+</head>
+<body>
+	<div th:insert="/commons/header :: header">
+		<!-- 헤더영역이 포함됩니다. -->
+		
+	</div>
+	<main>
+		<h1>메인영역</h1>
+		<!-- ///1050px/// -->
+		<div class="page-board view-width">
+			<!-- ///200px// -->
+			<!-- //사이드메뉴위치// -->
+			<div th:insert="/commons/sideMenu :: sideMenu">
+			</div>
+			<!-- //820px/// -->
+			<section id="notice">
+				<h1>공지사항</h1>
+				<div>
+					<div>
+						<p class="page-tit">공지사항
+							<span class="sub">
+								컬리의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요.
+							</span>
+						</p>
+					</div>
+					
+					<div class="space-between">
+						<div class="board-ea">
+							
+							<form action="notice.bo" id="ea-form">
+								<input type="hidden" name="side" value="${param.side }"/>
+								<select name="ea" id="ea">
+									<option value="5" >5개씩</option>
+									<option value="10" >10개씩</option>
+									<option value="20" >20개씩</option>
+								</select>
+							</form>	
+						</div>
+						<!-- <th:block th:if="${session.logInfo != null}"> -->
+						<a href="/feedback/write"><button class="btn-style">글쓰기</button></a>
+						<!-- </th:block> -->
+					</div>	
+					<div class="page-view">
+						<ul class="list-tit">
+							<li>번호</li>
+							<li>제목</li>
+							<li>작성자</li>
+							<li>작성일</li>
+							<li>조회</li>
+						</ul>
+						<!-- //DB내용 뿌려주세요 가이드입니다//// -->
+						<ul class="list-item" th:if="!${#lists.isEmpty(noticeList)}" th:each="notice:${noticeList}">
+							<li th:text="${notice.no }"></li>
+							<li><a th:href="|/feedback/detail/${notice.no}|" >[[${notice.subject }]]</a></li>
+							<li>[[${notice.writer}]]</li>
+							<!-- <li>[[${notice.reg_date}]]</li> -->	
+							<li th:text="${notice.reg_date }"></li>
+							<li>[[${notice.count }]]</li>
+						</ul>
+						<div th:if="${#lists.isEmpty(noticeList)}">
+							<p style="text-align: center;">조회된 결과가 존재하지 않습니다.</p>
+						</div>
+						
+						<!-- ///////////////////////// -->
+					</div>
+					<script type="text/javascript" >
+						function pageClick(pageNO){
+							var writer=$("#ch-writer").val();
+							var subject=$("#ch-subject").val();
+							var content=$("#ch-content").val();
+							var ea=$("#input_ea").val();
+							//var search=$("#txt").val();
+							var queryString="notice.bo?side=1&page="+pageNO;
+							
+							queryString += "&ea="+ea;
+							
+							
+							if($("#ch-writer").is(":checked")){
+								queryString += "&writer="+writer;
+							}
+							if($("#ch-subject").is(":checked")){
+								queryString += "&subject="+subject;
+							}
+							if($("#ch-content").is(":checked")){
+								queryString += "&content="+content;
+							}
+							if($("#txt").val().trim()!=""){
+								queryString += "&search="+ $("#txt").val();
+							}
+
+							location.href=queryString;
+							
+						}
+					</script>
+					
+					<div class="pagging">
+					<!-- 
+						//prev
+						<span th:if="${pageMaker.from > 1}">
+							<a href="/notice/1">&lt;&lt;</a>
+							<a th:href="|/notice/${pageMaker.from-1 }|">&lt;</a>
+						</span>
+						//페이지번호
+						<span th:each="page :${#numbers.sequence(pageMaker.from, pageMaker.to)}">
+							<a th:href="|/notice/${page }|">[[${page }]]</a>
+						</span>
+						//next
+						<span th:if="${pageMaker.to < pageMaker.totalPages}">
+							<a th:href="|/notice/${pageMaker.to+1 }|">&gt;</a>
+							<a th:href="|/notice/${pageMaker.totalPages }|">&gt;&gt;</a>
+						</span>
+					
+					 -->
+					<!-- 
+						<span th:if="${pUtil.pStart > 1}">
+							<a href="/notice/1">&lt;&lt;</a>
+							<a th:href="|/notice/${pUtil.pStart-1}|">&lt;</a>
+						</span>
+						<span th:each="page : ${#numbers.sequence( pUtil.pStart , pUtil.pEnd )}">
+							<a th:href="|/notice/${page}|">[[${page}]]</a>
+						</span>
+						<span th:if="${pUtil.pEnd < pUtil.pTotal}">
+							<a th:href="|/notice/${pUtil.pEnd+1}|">&gt;</a>
+							<a th:href=|/notice/${pUtil.pTotal}|>&gt;&gt;</a>
+						</span>
+						 -->
+					</div>
+					<form class="search-form" action="notice.bo">
+						<div class="search-target">
+							<img alt="아이콘" src="/images/ico_function.gif">
+							<span>검색어</span>
+							<!-- 
+							<input id="input_ea" type="hidden" name="ea" value="${param.ea }" />
+							 -->
+							<input id="ch-writer" type="checkbox" name="writer" >이름
+							<input id="ch-subject" type="checkbox" name="subject">제목
+							<input id="ch-content" type="checkbox" name="content">내용
+						</div>
+						<div class="btn-wrap">
+						<!-- 
+							<input id="txt" type="search" name="search" value="${param.search }">
+							 -->
+							<button type="submit">
+								<img alt="검색" src="/images/search.png">
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</div>
+	</main>
+	
+	<div th:include="/commons/footer :: footer">
+		<!-- 푸터영역이 삽입됩니다. -->
+		
+	</div>
+	
+</body>
+</html>

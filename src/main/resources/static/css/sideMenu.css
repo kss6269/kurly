@@ -1,0 +1,61 @@
+@charset "UTF-8";
+#snb div{
+	width: 200px;
+}
+#snb div .snb-tit{
+	padding: 0 0 30px 2px;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 41px;
+    color: #4a4a4a;
+}
+#snb div ul li{
+	border: 1px solid #dcdbde;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: none;
+	
+}
+
+#snb div ul li:last-child{
+	border-bottom: 1px solid #dcdbde;
+}
+#snb div ul li a{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 19px;
+	color: #666;
+	font-size: 12px;
+	height: 50px;
+	font-family: 'Noto Sans', sans-serif;
+}
+#snb div ul li:hover a, 
+#snb div ul li.selected a{
+	color: #5f0080;
+	background-color: #f7f7f7;
+}
+#snb>div>div{
+	margin-top: 16px;
+}
+#snb>div>div>a{
+	display: flex;
+	justify-content: space-between;
+	padding: 0 19px;
+	width:100%;
+	height: 60px;
+	font-size:12px;
+	color:#666;
+	background-color: #f7f7f7;
+	border: 1px solid #f7f7f7;
+	border-radius: 0 100px 100px 0;
+	font-family: 'Noto Sans', sans-serif;
+}
+#snb>div>div>a>span{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+}
+#snb>div>div>a>span>span:first-child {
+	font-weight: 700;
+}

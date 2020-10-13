@@ -1,0 +1,79 @@
+@charset "UTF-8";
+@import url("common.css");
+
+.page-tit{
+	color: #333;
+	padding-top: 64px;
+	font-size: 30px;
+	font-weight: 900;
+	text-align: center;
+}
+.sub{
+	padding: 23px 0 10px;
+	font-size: 12px;
+	color: #666;
+	text-align: right;
+}
+.ico{
+	color: #ee6a7b;
+	padding-right: 2px;
+}
+.field_head{
+	width: 640px;
+	margin: 0 auto
+}
+.join-form{
+	width: 640px;
+	margin: 0 auto;	
+	border-top: 1px solid #5f0080;
+	padding: 10px 0 30px; 
+}
+.join-form ul li ul li{
+	width: 160px;
+	padding: 10px 0;
+	
+}
+.join-form ul li ul li:first-child{
+	line-height: 44px;
+}
+.join-form ul li ul li:last-child{
+	width: 480px;
+}
+.join-form ul li ul li input{
+	height: 44px;
+	padding: 0 14px;
+}
+.join-form ul li input{
+	width: 100%;
+}
+.join-form ul li.join-submit input{
+	background-color: #5f0080;
+	color: #fff;
+	font-size: 18px;
+	padding: 1em;
+	font-weight: 700;
+	
+}
+
+.bad{
+	color: #ee6a7b;
+}
+
+.good{
+	color: #0f851a;
+}
+.bad:before {
+	content: '\2715';
+    display: inline-block;
+    padding-right: 3px;
+    font-size: 12px;
+    vertical-align: 0;
+}
+.good:before {
+    content: '\2713';
+    display: inline-block;
+    padding: 0 4px 0 2px;
+    font-size: 12px;
+    vertical-align: 0;
+}
+

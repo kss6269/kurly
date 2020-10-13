@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<header class="main-header" th:fragment="header">
+		<h1>상단영역</h1>
+		<div id="header-wrap" class="view-width">
+			<section id="user-deliver">
+				<h1>유저메뉴&amp;택배지역검색</h1>
+				<div>
+					<section id="delivery-info">
+						<h1>택배서비스안내</h1>
+						<div>
+							<img src="/images/delivery.gif">
+						</div>
+					</section>
+					<nav id="user-menu">
+						<h1>유저메뉴</h1>
+						<div>
+							<ul>
+								<li class="menu pipe"><a href="/member/join">회원가입</a></li>
+								<li class="menu pipe">
+									<th:block th:if="${session.logInfo == null}">
+										<a href="/member/login">로그인</a>
+									</th:block>
+									<th:block th:if="${session.logInfo != null}">
+										<a href="#">[[${session.logInfo.name }]]님!</a>
+										<a href="/member/logout">로그아웃</a>
+									</th:block>
+								</li>
+								<li class="menu pipe"><a href="/notice/1">고객센터</a></li>
+								<li class="menu"><a href="#">배송지역 검색</a></li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</section>
+			<section id="logo-top">
+				<h1>메인로고영역</h1>
+				<div>
+					<a href="/">
+						<img src="/images/logo_x2.png">
+					</a>
+				</div>
+			</section>
+			<section id="gnb-wrap">
+				<h1>상단메뉴&amp;검색&amp;카트</h1>
+				<div>
+					<nav id="gnb">
+						<h1>상단메뉴</h1>
+						<div>
+							<ul>
+								<li class="pipe row-align tot-category" >
+									<a href="#" id="gnb-bar" class="row-align">
+										<span class="bar-wrap">
+											<i class="bar1"></i>
+											<i class="bar2"></i>
+											<i class="bar3"></i>
+										</span>
+										<span id="category">전체 카테고리</span>
+									</a>
+									<!-- /////////////////////////////////////////// -->
+									<div class="sub-menu">
+										<ul class="flex-column-center">
+											<li class="">채소</li>
+											<li>과일·견과·쌀</li>
+											<li>수산·해산·건어물</li>
+											<li>국·반찬·메인요리</li>
+											<li>국·반찬·메인요리</li>
+											<li>샐러드·간편식</li>
+											<li>면·양념·오일</li>
+											<li>음료·우유·떡·간식</li>
+											<li>베이커리·치즈·델리</li>
+											<li>건강식품</li>
+											<li>생활요품·러빙</li>
+											<li>뷰티·바디케어</li>
+										</ul>
+									</div>
+									<script type="text/javascript">
+										$(function(){
+											$(".sub-menu").hide();
+												$("#category").mouseover(function(){
+													$(".sub-menu").show();
+												});
+											$("#category").mouseout(function(){
+												$(".sub-menu").hide();
+											})
+										});
+									</script>
+									<!-- /////////////////////////////////////////// -->
+								</li>
+								<li class="pipe"><a href="#" >신상품</a></li>
+								<li class="pipe"><a href="#" >베스트</a></li>
+								<li class="pipe"><a href="#" >알뜰쇼핑</a></li>
+								<li><a href="#">이벤트</a></li>
+							</ul>
+						</div>
+					</nav>
+					<section id="search">
+						<h1>검색</h1>
+						<div>
+							<form>
+								<input class="inp-serch" type="search" placeholder="지금 필요한 집중 식단관리">
+								<button type="submit">
+								<img alt="검색버튼" src="/images/ico_search_x2.png">
+								</button>
+							</form>
+						</div>
+					</section>
+					<section id="cart">
+						<h1>카트</h1>
+						<div>
+							<a href="#"><img src="/images/ico_cart_x2_v2.png"></a>
+						</div>
+					</section>
+				</div>
+			</section>
+		</div>
+	</header>
+
+</body>
+</html>

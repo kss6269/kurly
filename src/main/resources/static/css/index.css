@@ -1,0 +1,233 @@
+@charset "UTF-8";
+@import url("common.css");
+
+/* /////////////////////////////////////////// */
+/* //////visual.css/////////////////////////// */
+/* /////////////////////////////////////////// */
+#visual-area{
+	position: relative;
+	width: 100%;
+	height: 370px;
+	overflow: hidden;
+}
+#visual-area ul{
+	display: flex;
+	position: absolute;
+	top:0;
+	left: 0;
+}
+
+
+#visual-area ul li{
+	display: block;
+	width: 100%;
+	height: 370px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: auto;
+}
+#visual-area ul li.bg1{
+	background-image: url("/images/pc_img_1.jpg");
+}
+#visual-area ul li.bg2{
+	background-image: url("/images/pc_img_2.jpg");
+}
+#visual-area ul li.bg3{
+	background-image: url("/images/pc_img_3.jpg");
+}
+#visual-area ul li.bg4{
+	background-image: url("/images/pc_img_4.jpg");
+}
+#visual-area ul li.bg5{
+	background-image: url("/images/pc_img_5.jpg");
+}
+/* ////prev-next 버튼////////// */
+#visual{
+	position: relative;
+}
+
+#visual #btn-wrap{
+	position: absolute;
+	width:100%;
+	top:159px;
+	left: 0;
+	display: none;
+	
+}
+#visual:hover #btn-wrap{
+	display: block;
+}
+#visual div.btn{
+	display: flex;
+	justify-content: space-between;
+}
+
+#visual div.btn a{
+	display:inline-block;
+	width: 52px;
+	height: 52px;
+	background-position: center;
+}
+#visual #prev{
+	background-image: url("../images/ico_prev1_x1.png");
+}
+#visual #next{
+	background-image: url("../images/ico_next1_x1.png");
+}
+/* ///list-btn/// */
+#visual #list-wrap{
+	position: absolute;
+	bottom:20px;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	
+}
+#visual #list-wrap a{
+	padding: 10px;
+	border: 1px solid #fff;
+	color: #fff;
+	opacity: 0.5;
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-radius: 14px;
+	
+}
+#visual #list-wrap a.selected{
+	background-color:  #fff;
+	color: #aaa;
+}
+/* ////////////////////////////////////// */
+#product .goods-tit{
+	font-size: 28px;
+	font-weight: 700;
+	text-align: center;
+	padding: 80px 0 35px;
+}
+#product .product-wrap .list-view{
+	width: 1050px;
+	overflow: hidden;
+	
+}
+#product .product-wrap .list-view .product-list-wrap{
+	width: 2100px;
+	transition: all 1s;
+}
+#product .product-wrap ul{
+	width: 1050px;
+	justify-content: space-between;
+}
+#product .product-wrap ul .goods{
+	position: relative;
+	width: 249px;
+	height: 500px;
+}
+#product .product-wrap ul .goods .sale-rate{
+	position:absolute;
+	top:0;
+	left:0;
+	width: 62px;
+	height: 54px;
+	background-color: #5f0080;
+	color: #fff;
+	font-size: 18px;
+	text-align: center;
+	opacity: 0.5;
+    z-index: 1;
+}
+#product .product-wrap ul .goods .sale-rate .rate{
+	font-size: 21.5px;
+}
+#product .product-wrap ul .goods .goods-img{
+	display: block;
+	margin-bottom: 16px;
+	width: 249px;
+	height: 320px;
+	cursor: pointer;
+	overflow: hidden;
+	font-size:0; 
+}
+#product .product-wrap ul .goods .goods-img:hover img{
+	transform : scale(1.05);
+}
+#product .product-wrap ul .goods .goods-img img{
+	display: block;
+	width: 249px;
+	height: 320px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	transform : scale(1);
+	transition: all 0.2s ease-in; 
+}
+#product .product-wrap ul.list1 .goods:nth-child(1) .goods-img img{
+	background-image: url("../images/p_1.jpg");
+}
+#product .product-wrap ul.list1 .goods:nth-child(2) .goods-img img{
+	background-image: url("../images/p_2.jpg");
+}
+#product .product-wrap ul.list1 .goods:nth-child(3) .goods-img img{
+	background-image: url("../images/p_3.jpg");
+}
+#product .product-wrap ul.list1 .goods:nth-child(4) .goods-img img{
+	background-image: url("../images/p_4.jpg");
+}
+#product .product-wrap ul.list2 .goods:nth-child(1) .goods-img img{
+	background-image: url("../images/p_5.jpg");
+}
+#product .product-wrap ul.list2 .goods:nth-child(2) .goods-img img{
+	background-image: url("../images/p_6.jpg");
+}
+#product .product-wrap ul.list2 .goods:nth-child(3) .goods-img img{
+	background-image: url("../images/p_7.jpg");
+}
+#product .product-wrap ul.list2 .goods:nth-child(4) .goods-img img{
+	background-image: url("../images/p_8.jpg");
+}
+
+#product .product-wrap ul .goods div .name{
+	font-size: 16px;
+	color: #333;
+	padding-bottom: 10px;
+}
+#product .product-wrap ul .goods div .sale-price{
+	font-weight: 700;
+	font-size: 16px;
+	color: #333;
+}
+#product .product-wrap ul .goods div .price{
+	font-size: 14px;
+	color: #ccc;
+	text-decoration: line-through;
+}
+
+/* ////button태그 배경 border 제거////////// */
+.list-posi{
+	position: relative;
+}
+
+.more-btn button{
+    border: none;
+    background-color: rgba(255,255,255,0);
+    
+    position: absolute;
+	top:130px;
+}
+.more-btn .more-left{
+	left:-30px;
+	display: none;
+}
+.more-btn .more-right{
+	right: -30px;
+}
+
+
+/* ///////////////////////////////////// */
+#devivery div{
+	font-size:0; 
+}
+#devivery img{
+	width: 1050px;
+	
+}
